@@ -97,6 +97,25 @@ gh run view <run-id> --repo <owner/repo> --log-failed
 If that fails, authenticate with `gh auth login` or download the log and use
 `--log-file`.
 
+## Try It On A Failed Run
+
+From a repository with a failed GitHub Actions run:
+
+```bash
+gh run list --repo owner/repo --status failure --limit 5
+gha-repro-kit owner/repo --run 123456789 --out ./gha-repro-output
+less ./gha-repro-output/report.md
+```
+
+For very large workflows, pick one failed job first:
+
+```bash
+gh run view 123456789 --repo owner/repo --json jobs \
+  --jq '.jobs[] | select(.conclusion == "failure") | [.databaseId, .name] | @tsv'
+
+gha-repro-kit owner/repo --run 123456789 --job 987654321 --out ./gha-repro-output
+```
+
 ## GitHub Action
 
 Use the action to generate a reproduction packet for the current run:
@@ -172,11 +191,15 @@ next parser improvement.
 
 Current examples include:
 
-- `openai/openai-node`: pnpm dependency metadata failure
-- `BurntSushi/ripgrep`: downloaded archive was not gzip
-- `psf/black`: unavailable Python prerelease in `actions/setup-python`
-- `pydantic/pydantic`: native Rust/Python extension build failure in a large
-  workflow, analyzed with `--job`
+- [`openai/openai-node`](examples/openai-openai-node-27024660268): pnpm
+  dependency metadata failure
+- [`BurntSushi/ripgrep`](examples/BurntSushi-ripgrep-26858976307): downloaded
+  archive was not gzip
+- [`psf/black`](examples/psf-black-26904107152): unavailable Python prerelease
+  in `actions/setup-python`
+- [`pydantic/pydantic`](examples/pydantic-pydantic-27012427463-79719039881):
+  native Rust/Python extension build failure in a large workflow, analyzed with
+  `--job`
 
 ## Roadmap
 

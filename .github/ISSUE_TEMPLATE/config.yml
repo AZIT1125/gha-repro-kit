@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Real-world examples
+    url: https://github.com/AZIT1125/gha-repro-kit/tree/main/examples
+    about: See examples of generated reports from public failed Actions runs.
