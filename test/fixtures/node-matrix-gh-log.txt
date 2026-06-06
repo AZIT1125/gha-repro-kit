@@ -1,0 +1,9 @@
+test (20, ubuntu-latest)	Set up job	2026-06-06T00:00:00Z	Current runner version: '2.330.0'
+test (20, ubuntu-latest)	Set up job	2026-06-06T00:00:01Z	Operating System
+test (20, ubuntu-latest)	Set up job	2026-06-06T00:00:02Z	Ubuntu
+test (20, ubuntu-latest)	Setup Node	2026-06-06T00:00:03Z	Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+test (20, ubuntu-latest)	Install dependencies	2026-06-06T00:00:04Z	Run pnpm install --frozen-lockfile
+test (20, ubuntu-latest)	Run tests	2026-06-06T00:00:05Z	Run pnpm test packages/parser
+test (20, ubuntu-latest)	Run tests	2026-06-06T00:00:06Z	FAIL packages/parser/tokenize.test.ts
+test (20, ubuntu-latest)	Run tests	2026-06-06T00:00:07Z	AssertionError: expected token EOF
+test (20, ubuntu-latest)	Run tests	2026-06-06T00:00:08Z	Process completed with exit code 1

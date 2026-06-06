@@ -1,0 +1,36 @@
+{
+  "name": "gha-repro-kit",
+  "version": "0.1.0",
+  "description": "Turn failed GitHub Actions runs into concise reports and local reproduction scaffolds.",
+  "type": "module",
+  "bin": {
+    "gha-repro-kit": "./bin/gha-repro-kit.js"
+  },
+  "files": [
+    "action.yml",
+    "bin/",
+    "docs/",
+    "examples/",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "CODE_OF_CONDUCT.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "start": "node ./bin/gha-repro-kit.js"
+  },
+  "keywords": [
+    "github-actions",
+    "ci",
+    "oss",
+    "maintainers",
+    "repro"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

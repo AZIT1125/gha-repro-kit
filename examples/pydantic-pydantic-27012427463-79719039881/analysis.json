@@ -1,0 +1,228 @@
+{
+  "target": {
+    "repo": "pydantic/pydantic",
+    "runId": "27012427463",
+    "jobId": "79719039881"
+  },
+  "totalLines": 748,
+  "primaryFailure": {
+    "job": "Lint 3.12",
+    "step": "uv sync --all-packages --group linting --all-extras",
+    "timestamp": "2026-06-05T11:34:21.2648022Z",
+    "message": "could not compile `pydantic-core` (lib) due to 10 previous errors",
+    "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648022Z \u001b[31m      \u001b[0merror: could not compile `pydantic-core` (lib) due to 10 previous errors",
+    "lineNumber": 714,
+    "context": [
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2644459Z \u001b[31m      \u001b[0m   :::",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2644966Z \u001b[31m      \u001b[0m/home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/strum-0.28.0/src/lib.rs:146:1",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2645460Z \u001b[31m      \u001b[0m    |",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2645740Z \u001b[31m      \u001b[0m146 | pub trait EnumMessage {",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2646385Z \u001b[31m      \u001b[0m    | --------------------- this is the trait that was imported",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2646890Z \u001b[31m      \u001b[0m    = help: you can use `cargo tree` to explore your dependency tree",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2647171Z ",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2647446Z \u001b[31m      \u001b[0mFor more information about this error, try `rustc --explain E0599`.",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648022Z \u001b[31m      \u001b[0merror: could not compile `pydantic-core` (lib) due to 10 previous errors",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648492Z \u001b[31m      \u001b[0m💥 maturin failed",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648911Z \u001b[31m      \u001b[0m  Caused by: Failed to build a native library through cargo",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2649405Z \u001b[31m      \u001b[0m  Caused by: Cargo build finished with \"exit status:",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2649878Z \u001b[31m      \u001b[0m101\": `env -u CARGO PYO3_BUILD_EXTENSION_MODULE=\"1\"",
+      "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2650360Z \u001b[31m      \u001b[0mPYO3_ENVIRONMENT_SIGNATURE=\"cpython-3.12-64bit\""
+    ],
+    "nearestCommand": {
+      "job": "Lint 3.12",
+      "step": "uv sync --all-packages --group linting --all-extras",
+      "timestamp": "2026-06-05T11:33:31.6551906Z",
+      "message": "uv pip install pip",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:31.6551906Z \u001b[36;1muv pip install pip\u001b[0m",
+      "lineNumber": 227,
+      "command": "uv pip install pip"
+    }
+  },
+  "failures": [
+    {
+      "job": "Lint 3.12",
+      "step": "uv sync --all-packages --group linting --all-extras",
+      "timestamp": "2026-06-05T11:34:21.2648022Z",
+      "message": "could not compile `pydantic-core` (lib) due to 10 previous errors",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648022Z \u001b[31m      \u001b[0merror: could not compile `pydantic-core` (lib) due to 10 previous errors",
+      "lineNumber": 714,
+      "context": [
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2644459Z \u001b[31m      \u001b[0m   :::",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2644966Z \u001b[31m      \u001b[0m/home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/strum-0.28.0/src/lib.rs:146:1",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2645460Z \u001b[31m      \u001b[0m    |",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2645740Z \u001b[31m      \u001b[0m146 | pub trait EnumMessage {",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2646385Z \u001b[31m      \u001b[0m    | --------------------- this is the trait that was imported",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2646890Z \u001b[31m      \u001b[0m    = help: you can use `cargo tree` to explore your dependency tree",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2647171Z ",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2647446Z \u001b[31m      \u001b[0mFor more information about this error, try `rustc --explain E0599`.",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648022Z \u001b[31m      \u001b[0merror: could not compile `pydantic-core` (lib) due to 10 previous errors",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648492Z \u001b[31m      \u001b[0m💥 maturin failed",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2648911Z \u001b[31m      \u001b[0m  Caused by: Failed to build a native library through cargo",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2649405Z \u001b[31m      \u001b[0m  Caused by: Cargo build finished with \"exit status:",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2649878Z \u001b[31m      \u001b[0m101\": `env -u CARGO PYO3_BUILD_EXTENSION_MODULE=\"1\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2650360Z \u001b[31m      \u001b[0mPYO3_ENVIRONMENT_SIGNATURE=\"cpython-3.12-64bit\""
+      ],
+      "nearestCommand": {
+        "job": "Lint 3.12",
+        "step": "uv sync --all-packages --group linting --all-extras",
+        "timestamp": "2026-06-05T11:33:31.6551906Z",
+        "message": "uv pip install pip",
+        "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:31.6551906Z \u001b[36;1muv pip install pip\u001b[0m",
+        "lineNumber": 227,
+        "command": "uv pip install pip"
+      }
+    },
+    {
+      "job": "Lint 3.12",
+      "step": "uv sync --all-packages --group linting --all-extras",
+      "timestamp": "2026-06-05T11:34:21.2654348Z",
+      "message": "command ['maturin', 'pep517', 'build-wheel', '-i',",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2654348Z \u001b[31m      \u001b[0mError: command ['maturin', 'pep517', 'build-wheel', '-i',",
+      "lineNumber": 726,
+      "context": [
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2649878Z \u001b[31m      \u001b[0m101\": `env -u CARGO PYO3_BUILD_EXTENSION_MODULE=\"1\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2650360Z \u001b[31m      \u001b[0mPYO3_ENVIRONMENT_SIGNATURE=\"cpython-3.12-64bit\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2650947Z \u001b[31m      \u001b[0mPYO3_PYTHON=\"/home/runner/work/_temp/setup-uv-cache/builds-v0/.tmpAf4h6k/bin/python\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2651703Z \u001b[31m      \u001b[0mPYTHON_SYS_EXECUTABLE=\"/home/runner/work/_temp/setup-uv-cache/builds-v0/.tmpAf4h6k/bin/python\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2652471Z \u001b[31m      \u001b[0m\"cargo\" \"rustc\" \"--profile\" \"dev\" \"--message-format\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2652932Z \u001b[31m      \u001b[0m\"json-render-diagnostics\" \"--manifest-path\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2653459Z \u001b[31m      \u001b[0m\"/home/runner/work/pydantic/pydantic/pydantic-core/Cargo.toml\" \"--lib\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2653934Z \u001b[31m      \u001b[0m\"--crate-type\" \"cdylib\"`",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2654348Z \u001b[31m      \u001b[0mError: command ['maturin', 'pep517', 'build-wheel', '-i',",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2654889Z \u001b[31m      \u001b[0m'/home/runner/work/_temp/setup-uv-cache/builds-v0/.tmpAf4h6k/bin/python',",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2655494Z \u001b[31m      \u001b[0m'--compatibility', 'off', '--editable'] returned non-zero exit status 1",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2655799Z ",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2655804Z ",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2656265Z \u001b[36m\u001b[1mhint\u001b[0m\u001b[39m\u001b[1m:\u001b[0m Build failures usually indicate a problem with the package or the build environment"
+      ],
+      "nearestCommand": {
+        "job": "Lint 3.12",
+        "step": "uv sync --all-packages --group linting --all-extras",
+        "timestamp": "2026-06-05T11:33:31.6551906Z",
+        "message": "uv pip install pip",
+        "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:31.6551906Z \u001b[36;1muv pip install pip\u001b[0m",
+        "lineNumber": 227,
+        "command": "uv pip install pip"
+      }
+    },
+    {
+      "job": "Lint 3.12",
+      "step": "uv sync --all-packages --group linting --all-extras",
+      "timestamp": "2026-06-05T11:34:21.2668226Z",
+      "message": "Process completed with exit code 1.",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2668226Z ##[error]Process completed with exit code 1.",
+      "lineNumber": 732,
+      "context": [
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2653459Z \u001b[31m      \u001b[0m\"/home/runner/work/pydantic/pydantic/pydantic-core/Cargo.toml\" \"--lib\"",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2653934Z \u001b[31m      \u001b[0m\"--crate-type\" \"cdylib\"`",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2654348Z \u001b[31m      \u001b[0mError: command ['maturin', 'pep517', 'build-wheel', '-i',",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2654889Z \u001b[31m      \u001b[0m'/home/runner/work/_temp/setup-uv-cache/builds-v0/.tmpAf4h6k/bin/python',",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2655494Z \u001b[31m      \u001b[0m'--compatibility', 'off', '--editable'] returned non-zero exit status 1",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2655799Z ",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2655804Z ",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2656265Z \u001b[36m\u001b[1mhint\u001b[0m\u001b[39m\u001b[1m:\u001b[0m Build failures usually indicate a problem with the package or the build environment",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2668226Z ##[error]Process completed with exit code 1.",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.2794001Z Post job cleanup.",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.3654603Z [command]/usr/bin/git version",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.3691852Z git version 2.54.0",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.3729181Z Temporarily overriding HOME='/home/runner/work/_temp/dd7bab36-4795-45ad-a21e-9ee1d9370218' before making global git config changes",
+        "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:34:21.3730549Z Adding repository directory to the temporary git global config as a safe directory"
+      ],
+      "nearestCommand": {
+        "job": "Lint 3.12",
+        "step": "uv sync --all-packages --group linting --all-extras",
+        "timestamp": "2026-06-05T11:33:31.6551906Z",
+        "message": "uv pip install pip",
+        "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:31.6551906Z \u001b[36;1muv pip install pip\u001b[0m",
+        "lineNumber": 227,
+        "command": "uv pip install pip"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "job": "Lint 3.12",
+      "step": "astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39",
+      "timestamp": "2026-06-05T11:33:30.7490841Z",
+      "message": "[command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/4ce148f9-d137-4761-a591-a76129fa6047 -f /home/runner/work/_temp/92193d5c-3d4a-4d4d-bdf0-f0b1ddce442a",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:30.7490841Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/4ce148f9-d137-4761-a591-a76129fa6047 -f /home/runner/work/_temp/92193d5c-3d4a-4d4d-bdf0-f0b1ddce442a",
+      "lineNumber": 200,
+      "command": "/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/4ce148f9-d137-4761-a591-a76129fa6047 -f /home/runner/work/_temp/92193d5c-3d4a-4d4d-bdf0-f0b1ddce442a"
+    },
+    {
+      "job": "Lint 3.12",
+      "step": "astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39",
+      "timestamp": "2026-06-05T11:33:31.5131601Z",
+      "message": "[command]/usr/bin/tar -xf /home/runner/work/_temp/cad3c1fb-567b-45b3-909b-d3f08d8fe00e/cache.tzst -P -C /home/runner/work/pydantic/pydantic --use-compress-program unzstd",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:31.5131601Z [command]/usr/bin/tar -xf /home/runner/work/_temp/cad3c1fb-567b-45b3-909b-d3f08d8fe00e/cache.tzst -P -C /home/runner/work/pydantic/pydantic --use-compress-program unzstd",
+      "lineNumber": 222,
+      "command": "/usr/bin/tar -xf /home/runner/work/_temp/cad3c1fb-567b-45b3-909b-d3f08d8fe00e/cache.tzst -P -C /home/runner/work/pydantic/pydantic --use-compress-program unzstd"
+    },
+    {
+      "job": "Lint 3.12",
+      "step": "uv sync --all-packages --group linting --all-extras",
+      "timestamp": "2026-06-05T11:33:31.6550848Z",
+      "message": "##[group]Run uv sync --all-packages --group linting --all-extras",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:31.6550848Z ##[group]Run uv sync --all-packages --group linting --all-extras",
+      "lineNumber": 225,
+      "command": "uv sync --all-packages --group linting --all-extras"
+    },
+    {
+      "job": "Lint 3.12",
+      "step": "uv sync --all-packages --group linting --all-extras",
+      "timestamp": "2026-06-05T11:33:31.6551906Z",
+      "message": "uv pip install pip",
+      "raw": "Lint 3.12\tUNKNOWN STEP\t2026-06-05T11:33:31.6551906Z \u001b[36;1muv pip install pip\u001b[0m",
+      "lineNumber": 227,
+      "command": "uv pip install pip"
+    }
+  ],
+  "environment": {
+    "runner": [
+      "ubuntu",
+      "ubuntu-24.04"
+    ],
+    "matrix": {},
+    "languages": {
+      "python": "3.12"
+    },
+    "setupSteps": [
+      {
+        "key": "Lint 3.12:astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39",
+        "job": "Lint 3.12",
+        "step": "astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "job": "Lint 3.12",
+      "steps": [
+        "UNKNOWN STEP",
+        "Runner Image Provisioner",
+        "Operating System",
+        "Runner Image",
+        "GITHUB_TOKEN Permissions",
+        "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd",
+        "Getting Git version info",
+        "Initializing the repository",
+        "Disabling automatic garbage collection",
+        "Setting up auth",
+        "Fetching the repository",
+        "Determining the checkout info",
+        "Checking out the ref",
+        "Removing auth",
+        "astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39",
+        "uv sync --all-packages --group linting --all-extras"
+      ],
+      "lines": 741
+    },
+    {
+      "job": "unknown",
+      "steps": [
+        "unknown"
+      ],
+      "lines": 7
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "target": {
+    "repo": "psf/black",
+    "runId": "26904107152"
+  },
+  "totalLines": 193,
+  "primaryFailure": {
+    "job": "lint",
+    "step": "Installed versions",
+    "timestamp": "2026-06-03T18:15:08.7407878Z",
+    "message": "The version '3.15' with architecture 'x64' was not found for Ubuntu 24.04.",
+    "raw": "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.7407878Z ##[error]The version '3.15' with architecture 'x64' was not found for Ubuntu 24.04.",
+    "lineNumber": 176,
+    "context": [
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4853661Z   check-latest: false",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4856838Z   token: ***",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857130Z   update-environment: true",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857439Z   allow-prereleases: false",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857723Z   freethreaded: false",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857985Z ##[endgroup]",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.6114251Z ##[group]Installed versions",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.6196481Z Version 3.15 was not found in the local cache",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.7407878Z ##[error]The version '3.15' with architecture 'x64' was not found for Ubuntu 24.04.",
+      "lint\tUNKNOWN STEP\tThe list of all available versions can be found here: https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.7643130Z Post job cleanup.",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.8454592Z [command]/usr/bin/git version",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.8524574Z git version 2.54.0",
+      "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.8563875Z Temporarily overriding HOME='/home/runner/work/_temp/6d8f86f1-40aa-49e2-90e0-159f5ba0184b' before making global git config changes"
+    ],
+    "nearestCommand": null
+  },
+  "failures": [
+    {
+      "job": "lint",
+      "step": "Installed versions",
+      "timestamp": "2026-06-03T18:15:08.7407878Z",
+      "message": "The version '3.15' with architecture 'x64' was not found for Ubuntu 24.04.",
+      "raw": "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.7407878Z ##[error]The version '3.15' with architecture 'x64' was not found for Ubuntu 24.04.",
+      "lineNumber": 176,
+      "context": [
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4853661Z   check-latest: false",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4856838Z   token: ***",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857130Z   update-environment: true",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857439Z   allow-prereleases: false",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857723Z   freethreaded: false",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.4857985Z ##[endgroup]",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.6114251Z ##[group]Installed versions",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:07.6196481Z Version 3.15 was not found in the local cache",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.7407878Z ##[error]The version '3.15' with architecture 'x64' was not found for Ubuntu 24.04.",
+        "lint\tUNKNOWN STEP\tThe list of all available versions can be found here: https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.7643130Z Post job cleanup.",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.8454592Z [command]/usr/bin/git version",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.8524574Z git version 2.54.0",
+        "lint\tUNKNOWN STEP\t2026-06-03T18:15:08.8563875Z Temporarily overriding HOME='/home/runner/work/_temp/6d8f86f1-40aa-49e2-90e0-159f5ba0184b' before making global git config changes"
+      ],
+      "nearestCommand": null
+    }
+  ],
+  "commands": [],
+  "environment": {
+    "runner": [
+      "ubuntu",
+      "ubuntu-24.04"
+    ],
+    "matrix": {},
+    "languages": {
+      "python": "3.15"
+    },
+    "setupSteps": [
+      {
+        "key": "lint:actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405",
+        "job": "lint",
+        "step": "actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405"
+      },
+      {
+        "key": "lint:Installed versions",
+        "job": "lint",
+        "step": "Installed versions"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "job": "lint",
+      "steps": [
+        "UNKNOWN STEP",
+        "Runner Image Provisioner",
+        "Operating System",
+        "Runner Image",
+        "GITHUB_TOKEN Permissions",
+        "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd",
+        "Getting Git version info",
+        "Initializing the repository",
+        "Disabling automatic garbage collection",
+        "Setting up auth",
+        "Fetching the repository",
+        "Determining the checkout info",
+        "Checking out the ref",
+        "Removing auth",
+        "if [ \"$GITHUB_BASE_REF\" != \"main\" ]; then",
+        "actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405",
+        "Installed versions"
+      ],
+      "lines": 192
+    },
+    {
+      "job": "unknown",
+      "steps": [
+        "unknown"
+      ],
+      "lines": 1
+    }
+  ]
+}

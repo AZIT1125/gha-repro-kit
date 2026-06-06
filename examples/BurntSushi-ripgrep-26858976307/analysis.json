@@ -1,0 +1,316 @@
+{
+  "target": {
+    "repo": "BurntSushi/ripgrep",
+    "runId": "26858976307"
+  },
+  "totalLines": 554,
+  "primaryFailure": {
+    "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+    "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+    "timestamp": "2026-06-03T01:54:40.5056471Z",
+    "message": "gzip: stdin: not in gzip format",
+    "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056471Z gzip: stdin: not in gzip format",
+    "lineNumber": 535,
+    "context": [
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3865244Z   CARGO_TERM_COLOR: always",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3865805Z ##[endgroup]",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4003787Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006150Z                                  Dload  Upload   Total   Spent    Left  Speed",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006708Z ",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5009428Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5010207Z 100 55118  100 55118    0     0   534k      0 --:--:-- --:--:-- --:--:--  538k",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056132Z ",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056471Z gzip: stdin: not in gzip format",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5073240Z ##[error]Process completed with exit code 2.",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5235910Z Post job cleanup.",
+      "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6223947Z [command]/usr/bin/git version"
+    ],
+    "nearestCommand": {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.3835903Z",
+      "message": "tar xf cross-x86_64-unknown-linux-musl.tar.gz",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3835903Z \u001b[36;1mtar xf cross-x86_64-unknown-linux-musl.tar.gz\u001b[0m",
+      "lineNumber": 514,
+      "command": "tar xf cross-x86_64-unknown-linux-musl.tar.gz"
+    }
+  },
+  "failures": [
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.5056471Z",
+      "message": "gzip: stdin: not in gzip format",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056471Z gzip: stdin: not in gzip format",
+      "lineNumber": 535,
+      "context": [
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3865244Z   CARGO_TERM_COLOR: always",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3865805Z ##[endgroup]",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4003787Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006150Z                                  Dload  Upload   Total   Spent    Left  Speed",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006708Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5009428Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5010207Z 100 55118  100 55118    0     0   534k      0 --:--:-- --:--:-- --:--:--  538k",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056132Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056471Z gzip: stdin: not in gzip format",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5073240Z ##[error]Process completed with exit code 2.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5235910Z Post job cleanup.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6223947Z [command]/usr/bin/git version"
+      ],
+      "nearestCommand": {
+        "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+        "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+        "timestamp": "2026-06-03T01:54:40.3835903Z",
+        "message": "tar xf cross-x86_64-unknown-linux-musl.tar.gz",
+        "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3835903Z \u001b[36;1mtar xf cross-x86_64-unknown-linux-musl.tar.gz\u001b[0m",
+        "lineNumber": 514,
+        "command": "tar xf cross-x86_64-unknown-linux-musl.tar.gz"
+      }
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.5057537Z",
+      "message": "tar: Child returned status 1",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+      "lineNumber": 536,
+      "context": [
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3865805Z ##[endgroup]",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4003787Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006150Z                                  Dload  Upload   Total   Spent    Left  Speed",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006708Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5009428Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5010207Z 100 55118  100 55118    0     0   534k      0 --:--:-- --:--:-- --:--:--  538k",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056132Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056471Z gzip: stdin: not in gzip format",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5073240Z ##[error]Process completed with exit code 2.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5235910Z Post job cleanup.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6223947Z [command]/usr/bin/git version",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6260612Z git version 2.54.0"
+      ],
+      "nearestCommand": {
+        "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+        "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+        "timestamp": "2026-06-03T01:54:40.5057537Z",
+        "message": "tar: Child returned status 1",
+        "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+        "lineNumber": 536,
+        "command": "tar: Child returned status 1"
+      }
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.5058004Z",
+      "message": "tar: Error is not recoverable: exiting now",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+      "lineNumber": 537,
+      "context": [
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4003787Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006150Z                                  Dload  Upload   Total   Spent    Left  Speed",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006708Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5009428Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5010207Z 100 55118  100 55118    0     0   534k      0 --:--:-- --:--:-- --:--:--  538k",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056132Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056471Z gzip: stdin: not in gzip format",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5073240Z ##[error]Process completed with exit code 2.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5235910Z Post job cleanup.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6223947Z [command]/usr/bin/git version",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6260612Z git version 2.54.0",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6303972Z Temporarily overriding HOME='/home/runner/work/_temp/d2bc8544-d739-4339-b5b4-c2d3e770a97f' before making global git config changes"
+      ],
+      "nearestCommand": {
+        "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+        "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+        "timestamp": "2026-06-03T01:54:40.5058004Z",
+        "message": "tar: Error is not recoverable: exiting now",
+        "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+        "lineNumber": 537,
+        "command": "tar: Error is not recoverable: exiting now"
+      }
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.5073240Z",
+      "message": "Process completed with exit code 2.",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5073240Z ##[error]Process completed with exit code 2.",
+      "lineNumber": 538,
+      "context": [
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006150Z                                  Dload  Upload   Total   Spent    Left  Speed",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.4006708Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5009428Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5010207Z 100 55118  100 55118    0     0   534k      0 --:--:-- --:--:-- --:--:--  538k",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056132Z ",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5056471Z gzip: stdin: not in gzip format",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5073240Z ##[error]Process completed with exit code 2.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5235910Z Post job cleanup.",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6223947Z [command]/usr/bin/git version",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6260612Z git version 2.54.0",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6303972Z Temporarily overriding HOME='/home/runner/work/_temp/d2bc8544-d739-4339-b5b4-c2d3e770a97f' before making global git config changes",
+        "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.6305018Z Adding repository directory to the temporary git global config as a safe directory"
+      ],
+      "nearestCommand": {
+        "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+        "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+        "timestamp": "2026-06-03T01:54:40.5058004Z",
+        "message": "tar: Error is not recoverable: exiting now",
+        "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+        "lineNumber": 537,
+        "command": "tar: Error is not recoverable: exiting now"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": ": enable colors in Cargo output",
+      "timestamp": "2026-06-03T01:54:40.2888505Z",
+      "message": "##[group]Run : enable colors in Cargo output",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.2888505Z ##[group]Run : enable colors in Cargo output",
+      "lineNumber": 430,
+      "command": ": enable colors in Cargo output"
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": ": enable Cargo sparse registry",
+      "timestamp": "2026-06-03T01:54:40.2980517Z",
+      "message": "##[group]Run : enable Cargo sparse registry",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.2980517Z ##[group]Run : enable Cargo sparse registry",
+      "lineNumber": 445,
+      "command": ": enable Cargo sparse registry"
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": ": work around spurious network errors in curl 8.0",
+      "timestamp": "2026-06-03T01:54:40.3335086Z",
+      "message": "##[group]Run : work around spurious network errors in curl 8.0",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3335086Z ##[group]Run : work around spurious network errors in curl 8.0",
+      "lineNumber": 468,
+      "command": ": work around spurious network errors in curl 8.0"
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "rustc +stable --version --verbose",
+      "timestamp": "2026-06-03T01:54:40.3563595Z",
+      "message": "##[group]Run rustc +stable --version --verbose",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3563595Z ##[group]Run rustc +stable --version --verbose",
+      "lineNumber": 485,
+      "command": "rustc +stable --version --verbose"
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.3834898Z",
+      "message": "curl -LO \"https://github.com/cross-rs/cross/releases/download/$CROSS_VERSION/cross-x86_64-unknown-linux-musl.tar.gz\"",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3834898Z \u001b[36;1mcurl -LO \"https://github.com/cross-rs/cross/releases/download/$CROSS_VERSION/cross-x86_64-unknown-linux-musl.tar.gz\"\u001b[0m",
+      "lineNumber": 513,
+      "command": "curl -LO \"https://github.com/cross-rs/cross/releases/download/$CROSS_VERSION/cross-x86_64-unknown-linux-musl.tar.gz\""
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.3835903Z",
+      "message": "tar xf cross-x86_64-unknown-linux-musl.tar.gz",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.3835903Z \u001b[36;1mtar xf cross-x86_64-unknown-linux-musl.tar.gz\u001b[0m",
+      "lineNumber": 514,
+      "command": "tar xf cross-x86_64-unknown-linux-musl.tar.gz"
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.5057537Z",
+      "message": "tar: Child returned status 1",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5057537Z tar: Child returned status 1",
+      "lineNumber": 536,
+      "command": "tar: Child returned status 1"
+    },
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "step": "# In the past, new releases of 'cross' have broken CI. So for now, we",
+      "timestamp": "2026-06-03T01:54:40.5058004Z",
+      "message": "tar: Error is not recoverable: exiting now",
+      "raw": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)\tUNKNOWN STEP\t2026-06-03T01:54:40.5058004Z tar: Error is not recoverable: exiting now",
+      "lineNumber": 537,
+      "command": "tar: Error is not recoverable: exiting now"
+    }
+  ],
+  "environment": {
+    "runner": [
+      "ubuntu",
+      "ubuntu-24.04"
+    ],
+    "matrix": {
+      "job_value_1": "stable-s390x",
+      "job_value_2": "ubuntu-latest",
+      "job_value_3": "stable",
+      "job_value_4": "s390x-unknown-linux-gnu"
+    },
+    "languages": {
+      "rust": "1.96.0"
+    },
+    "setupSteps": [
+      {
+        "key": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu):ci/ubuntu-install-packages",
+        "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+        "step": "ci/ubuntu-install-packages"
+      },
+      {
+        "key": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu):: install rustup if needed",
+        "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+        "step": ": install rustup if needed"
+      },
+      {
+        "key": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu):rustup toolchain install stable --profile minimal --no-self-update",
+        "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+        "step": "rustup toolchain install stable --profile minimal --no-self-update"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "job": "test (stable-s390x, ubuntu-latest, stable, s390x-unknown-linux-gnu)",
+      "steps": [
+        "UNKNOWN STEP",
+        "Runner Image Provisioner",
+        "Operating System",
+        "Runner Image",
+        "GITHUB_TOKEN Permissions",
+        "actions/checkout@v4",
+        "Getting Git version info",
+        "Initializing the repository",
+        "Disabling automatic garbage collection",
+        "Setting up auth",
+        "Fetching the repository",
+        "Determining the checkout info",
+        "Checking out the ref",
+        "ci/ubuntu-install-packages",
+        "dtolnay/rust-toolchain@master",
+        ": parse toolchain version",
+        ": construct rustup command line",
+        ": set $CARGO_HOME",
+        ": install rustup if needed",
+        "rustup toolchain install stable --profile minimal --no-self-update",
+        "rustup default stable",
+        ": create cachekey",
+        ": disable incremental compilation",
+        ": enable colors in Cargo output",
+        ": enable Cargo sparse registry",
+        ": work around spurious network errors in curl 8.0",
+        "rustc +stable --version --verbose",
+        "# In the past, new releases of 'cross' have broken CI. So for now, we"
+      ],
+      "lines": 554
+    }
+  ]
+}

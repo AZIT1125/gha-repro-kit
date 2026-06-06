@@ -1,0 +1,5 @@
+test	Run tests	2026-06-06T00:00:01Z	Run pnpm test packages/parser
+test	Run tests	2026-06-06T00:00:02Z	pnpm test packages/parser
+test	Run tests	2026-06-06T00:00:03Z	FAIL packages/parser/tokenize.test.ts
+test	Run tests	2026-06-06T00:00:04Z	Error: expected token EOF
+test	Run tests	2026-06-06T00:00:05Z	Process completed with exit code 1

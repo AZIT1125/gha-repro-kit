@@ -1,0 +1,239 @@
+{
+  "target": {
+    "repo": "openai/openai-node",
+    "runId": "27024660268"
+  },
+  "totalLines": 367,
+  "primaryFailure": {
+    "job": "Detect Agents SDK regressions",
+    "step": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+    "timestamp": "2026-06-05T15:43:18.9766651Z",
+    "message": "ERR_PNPM_MISSING_TIME] The metadata of @types/node is missing the \"time\" field",
+    "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9766651Z [ERR_PNPM_MISSING_TIME] The metadata of @types/node is missing the \"time\" field",
+    "lineNumber": 330,
+    "context": [
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6519286Z env:",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6519716Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6520258Z ##[endgroup]",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:17.8064258Z Progress: resolved 1, reused 0, downloaded 0, added 0",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.4856621Z [WARN] The metadata of openai is missing the \"time\" field; skipping the minimumReleaseAge check for this package.",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.7190643Z [WARN] The metadata of @tailwindcss/vite is missing the \"time\" field; skipping the minimumReleaseAge check for this package.",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.8322252Z Progress: resolved 38, reused 0, downloaded 0, added 0",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9764949Z /home/runner/work/openai-node/openai-node/openai-agents-js/examples/nextjs:",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9766651Z [ERR_PNPM_MISSING_TIME] The metadata of @types/node is missing the \"time\" field",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9767205Z ",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9768184Z This error happened while installing a direct dependency of /home/runner/work/openai-node/openai-node/openai-agents-js/examples/nextjs",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9769075Z ",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9769623Z If you cannot fix this registry issue, then set \"resolution-mode\" to \"highest\".",
+      "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.1975007Z ##[error]Process completed with exit code 1."
+    ],
+    "nearestCommand": {
+      "job": "Detect Agents SDK regressions",
+      "step": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+      "timestamp": "2026-06-05T15:43:15.6482895Z",
+      "message": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6482895Z \u001b[36;1mpnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist\u001b[0m",
+      "lineNumber": 320,
+      "command": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist"
+    }
+  },
+  "failures": [
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+      "timestamp": "2026-06-05T15:43:18.9766651Z",
+      "message": "ERR_PNPM_MISSING_TIME] The metadata of @types/node is missing the \"time\" field",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9766651Z [ERR_PNPM_MISSING_TIME] The metadata of @types/node is missing the \"time\" field",
+      "lineNumber": 330,
+      "context": [
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6519286Z env:",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6519716Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6520258Z ##[endgroup]",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:17.8064258Z Progress: resolved 1, reused 0, downloaded 0, added 0",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.4856621Z [WARN] The metadata of openai is missing the \"time\" field; skipping the minimumReleaseAge check for this package.",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.7190643Z [WARN] The metadata of @tailwindcss/vite is missing the \"time\" field; skipping the minimumReleaseAge check for this package.",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.8322252Z Progress: resolved 38, reused 0, downloaded 0, added 0",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9764949Z /home/runner/work/openai-node/openai-node/openai-agents-js/examples/nextjs:",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9766651Z [ERR_PNPM_MISSING_TIME] The metadata of @types/node is missing the \"time\" field",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9767205Z ",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9768184Z This error happened while installing a direct dependency of /home/runner/work/openai-node/openai-node/openai-agents-js/examples/nextjs",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9769075Z ",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9769623Z If you cannot fix this registry issue, then set \"resolution-mode\" to \"highest\".",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.1975007Z ##[error]Process completed with exit code 1."
+      ],
+      "nearestCommand": {
+        "job": "Detect Agents SDK regressions",
+        "step": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+        "timestamp": "2026-06-05T15:43:15.6482895Z",
+        "message": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+        "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6482895Z \u001b[36;1mpnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist\u001b[0m",
+        "lineNumber": 320,
+        "command": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist"
+      }
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+      "timestamp": "2026-06-05T15:43:19.1975007Z",
+      "message": "Process completed with exit code 1.",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.1975007Z ##[error]Process completed with exit code 1.",
+      "lineNumber": 335,
+      "context": [
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.7190643Z [WARN] The metadata of @tailwindcss/vite is missing the \"time\" field; skipping the minimumReleaseAge check for this package.",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.8322252Z Progress: resolved 38, reused 0, downloaded 0, added 0",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9764949Z /home/runner/work/openai-node/openai-node/openai-agents-js/examples/nextjs:",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9766651Z [ERR_PNPM_MISSING_TIME] The metadata of @types/node is missing the \"time\" field",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9767205Z ",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9768184Z This error happened while installing a direct dependency of /home/runner/work/openai-node/openai-node/openai-agents-js/examples/nextjs",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9769075Z ",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:18.9769623Z If you cannot fix this registry issue, then set \"resolution-mode\" to \"highest\".",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.1975007Z ##[error]Process completed with exit code 1.",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.2076689Z Post job cleanup.",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.3077209Z [command]/usr/bin/git version",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.3113540Z git version 2.54.0",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.3165506Z Temporarily overriding HOME='/home/runner/work/_temp/bc1666f8-f9d8-4d7e-a0d8-962199105ec6' before making global git config changes",
+        "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:19.3167767Z Adding repository directory to the temporary git global config as a safe directory"
+      ],
+      "nearestCommand": {
+        "job": "Detect Agents SDK regressions",
+        "step": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+        "timestamp": "2026-06-05T15:43:15.6482895Z",
+        "message": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+        "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6482895Z \u001b[36;1mpnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist\u001b[0m",
+        "lineNumber": 320,
+        "command": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "timestamp": "2026-06-05T15:42:24.1192175Z",
+      "message": "##[group]Run actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:42:24.1192175Z ##[group]Run actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "lineNumber": 69,
+      "command": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5"
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "Fetching the repository",
+      "timestamp": "2026-06-05T15:42:24.3679303Z",
+      "message": "[command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2cef22822c13cd333850abb2681a2b1d9df43a79:refs/remotes/pull/1920/merge",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:42:24.3679303Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2cef22822c13cd333850abb2681a2b1d9df43a79:refs/remotes/pull/1920/merge",
+      "lineNumber": 128,
+      "command": "/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2cef22822c13cd333850abb2681a2b1d9df43a79:refs/remotes/pull/1920/merge"
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "./scripts/bootstrap",
+      "timestamp": "2026-06-05T15:42:25.0824042Z",
+      "message": "##[group]Run ./scripts/bootstrap",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:42:25.0824042Z ##[group]Run ./scripts/bootstrap",
+      "lineNumber": 159,
+      "command": "./scripts/bootstrap"
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "./scripts/bootstrap",
+      "timestamp": "2026-06-05T15:42:25.2882026Z",
+      "message": "yarn install v1.22.22",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:42:25.2882026Z yarn install v1.22.22",
+      "lineNumber": 166,
+      "command": "yarn install v1.22.22"
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "./scripts/bootstrap",
+      "timestamp": "2026-06-05T15:42:37.5871094Z",
+      "message": "$ if ./scripts/utils/check-is-in-git-install.sh; then ./scripts/build && ./scripts/utils/git-swap.sh; fi",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:42:37.5871094Z $ if ./scripts/utils/check-is-in-git-install.sh; then ./scripts/build && ./scripts/utils/git-swap.sh; fi",
+      "lineNumber": 171,
+      "command": "if ./scripts/utils/check-is-in-git-install.sh; then ./scripts/build && ./scripts/utils/git-swap.sh; fi"
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "./scripts/build",
+      "timestamp": "2026-06-05T15:43:04.4121240Z",
+      "message": "##[group]Run ./scripts/build",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:04.4121240Z ##[group]Run ./scripts/build",
+      "lineNumber": 186,
+      "command": "./scripts/build"
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "Fetching the repository",
+      "timestamp": "2026-06-05T15:43:14.5584454Z",
+      "message": "[command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/main:refs/remotes/origin/main",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:14.5584454Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/main:refs/remotes/origin/main",
+      "lineNumber": 298,
+      "command": "/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/main:refs/remotes/origin/main"
+    },
+    {
+      "job": "Detect Agents SDK regressions",
+      "step": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+      "timestamp": "2026-06-05T15:43:15.6481145Z",
+      "message": "##[group]Run pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+      "raw": "Detect Agents SDK regressions\tUNKNOWN STEP\t2026-06-05T15:43:15.6481145Z ##[group]Run pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist",
+      "lineNumber": 319,
+      "command": "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist"
+    }
+  ],
+  "environment": {
+    "runner": [
+      "ubuntu",
+      "ubuntu-24.04"
+    ],
+    "matrix": {},
+    "languages": {
+      "node": "22.22.3"
+    },
+    "setupSteps": [
+      {
+        "key": "Detect Agents SDK regressions:actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+        "job": "Detect Agents SDK regressions",
+        "step": "actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020"
+      },
+      {
+        "key": "Detect Agents SDK regressions:pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa",
+        "job": "Detect Agents SDK regressions",
+        "step": "pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa"
+      },
+      {
+        "key": "Detect Agents SDK regressions:Running self-installer...",
+        "job": "Detect Agents SDK regressions",
+        "step": "Running self-installer..."
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "job": "Detect Agents SDK regressions",
+      "steps": [
+        "UNKNOWN STEP",
+        "Runner Image Provisioner",
+        "Operating System",
+        "Runner Image",
+        "GITHUB_TOKEN Permissions",
+        "actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+        "Environment details",
+        "pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa",
+        "Running self-installer...",
+        "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+        "Getting Git version info",
+        "Initializing the repository",
+        "Disabling automatic garbage collection",
+        "Setting up auth",
+        "Fetching the repository",
+        "Determining the checkout info",
+        "Checking out the ref",
+        "./scripts/bootstrap",
+        "./scripts/build",
+        "Determining the default branch",
+        "echo \"resolution-mode=highest\" >> .npmrc",
+        "pnpm --filter @openai/agents-core --filter @openai/agents-openai --filter @openai/agents add file:../../../openai-node/dist"
+      ],
+      "lines": 367
+    }
+  ]
+}

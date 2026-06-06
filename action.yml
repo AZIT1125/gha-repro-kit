@@ -1,0 +1,49 @@
+name: gha-repro-kit
+description: Generate a concise reproduction packet for a failed GitHub Actions run.
+author: gha-repro-kit contributors
+
+inputs:
+  repo:
+    description: GitHub repository in owner/repo form.
+    required: false
+    default: ${{ github.repository }}
+  run-id:
+    description: GitHub Actions run ID.
+    required: false
+    default: ${{ github.run_id }}
+  out:
+    description: Directory for generated report.md and repro.sh.
+    required: false
+    default: gha-repro-output
+  github-token:
+    description: GitHub token used by the GitHub CLI to read the failed run log.
+    required: false
+    default: ""
+
+outputs:
+  report-path:
+    description: Path to the generated report.
+    value: ${{ steps.generate.outputs.report-path }}
+  repro-path:
+    description: Path to the generated reproduction script.
+    value: ${{ steps.generate.outputs.repro-path }}
+  summary-path:
+    description: Path to the generated PR-comment-ready summary.
+    value: ${{ steps.generate.outputs.summary-path }}
+  analysis-path:
+    description: Path to the generated machine-readable analysis.
+    value: ${{ steps.generate.outputs.analysis-path }}
+
+runs:
+  using: composite
+  steps:
+    - id: generate
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs['github-token'] || github.token }}
+      run: |
+        node "$GITHUB_ACTION_PATH/bin/gha-repro-kit.js" "${{ inputs.repo }}" --run "${{ inputs['run-id'] }}" --out "${{ inputs.out }}"
+        echo "report-path=${{ inputs.out }}/report.md" >> "$GITHUB_OUTPUT"
+        echo "repro-path=${{ inputs.out }}/repro.sh" >> "$GITHUB_OUTPUT"
+        echo "summary-path=${{ inputs.out }}/summary.md" >> "$GITHUB_OUTPUT"
+        echo "analysis-path=${{ inputs.out }}/analysis.json" >> "$GITHUB_OUTPUT"

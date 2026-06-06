@@ -1,0 +1,4 @@
+node_modules/
+gha-repro-output/
+coverage/
+.DS_Store
