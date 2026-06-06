@@ -22,6 +22,7 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_ACTION: ${{ github.event.action }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           set -euo pipefail
 
@@ -30,12 +31,34 @@ jobs:
             exit 0
           fi
 
+          combined_text="${ISSUE_TITLE}
+          ${ISSUE_BODY}"
+          lower_text="$(printf '%s' "${combined_text}" | tr '[:upper:]' '[:lower:]')"
+          priority="P2 通常"
+          next_action="内容を確認し、再現ログや期待する出力が足りなければ追加情報を依頼する。"
+
+          if printf '%s' "${lower_text}" | grep -Eq 'security|secret|token|credential|rce|injection|vulnerability|脆弱|漏洩|認証情報'; then
+            priority="P0 緊急"
+            next_action="セキュリティ影響と公開情報の有無をすぐ確認し、必要なら一時的に詳細公開を避ける。"
+          elif printf '%s' "${lower_text}" | grep -Eq 'crash|broken|fails?|bug|ci failed|落ち|失敗|壊'; then
+            priority="P1 重要"
+            next_action="再現手順とログ抜粋を確認し、修正が必要ならCodexに調査を依頼する。"
+          elif printf '%s' "${lower_text}" | grep -Eq 'feature|request|enhancement|改善|要望|追加'; then
+            priority="P3 低"
+            next_action="対象ユースケースと実ログ例があるか確認し、backlog化する。"
+          fi
+
+          body_excerpt="$(printf '%s' "${ISSUE_BODY:-本文なし}" | tr '\n' ' ' | cut -c 1-450)"
+
           jq -n \
             --arg content "gha-repro-kit にIssueが来ました。" \
             --arg title "#${ISSUE_NUMBER} ${ISSUE_TITLE}" \
             --arg url "${ISSUE_URL}" \
             --arg author "作成者: @${ISSUE_AUTHOR}" \
             --arg action "状態: ${ISSUE_ACTION}" \
+            --arg priority "${priority}" \
+            --arg next_action "${next_action}" \
+            --arg body_excerpt "${body_excerpt}" \
             '{
               username: "Hermes GitHub Watch",
               content: $content,
@@ -46,7 +69,10 @@ jobs:
                 fields: [
                   { name: "種類", value: "Issue", inline: true },
                   { name: "作成者", value: $author, inline: true },
-                  { name: "状態", value: $action, inline: true }
+                  { name: "状態", value: $action, inline: true },
+                  { name: "優先度", value: $priority, inline: true },
+                  { name: "次の一手", value: $next_action, inline: false },
+                  { name: "本文抜粋", value: $body_excerpt, inline: false }
                 ]
               }]
             }' > payload.json
@@ -69,6 +95,7 @@ jobs:
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
           PR_ACTION: ${{ github.event.action }}
           PR_DRAFT: ${{ github.event.pull_request.draft }}
+          PR_BODY: ${{ github.event.pull_request.body }}
         run: |
           set -euo pipefail
 
@@ -77,6 +104,25 @@ jobs:
             exit 0
           fi
 
+          combined_text="${PR_TITLE}
+          ${PR_BODY}"
+          lower_text="$(printf '%s' "${combined_text}" | tr '[:upper:]' '[:lower:]')"
+          priority="P2 通常"
+          next_action="差分とCI結果を確認し、必要ならレビューコメントかCodexへの修正依頼を行う。"
+
+          if [ "${PR_DRAFT}" = "true" ]; then
+            priority="P3 低"
+            next_action="Draft PRなので、ready_for_reviewになるまで流し見でよい。"
+          elif printf '%s' "${lower_text}" | grep -Eq 'security|secret|token|credential|rce|injection|vulnerability|脆弱|漏洩|認証情報'; then
+            priority="P0 緊急"
+            next_action="セキュリティ影響がある変更かすぐ確認し、必要なら修正依頼する。"
+          elif printf '%s' "${lower_text}" | grep -Eq 'fix|bug|ci|failure|broken|落ち|失敗|修正'; then
+            priority="P1 重要"
+            next_action="CIと差分を確認し、問題なければレビュー、怪しければCodexに調査を依頼する。"
+          fi
+
+          body_excerpt="$(printf '%s' "${PR_BODY:-本文なし}" | tr '\n' ' ' | cut -c 1-450)"
+
           jq -n \
             --arg content "gha-repro-kit にPull Requestが来ました。" \
             --arg title "#${PR_NUMBER} ${PR_TITLE}" \
@@ -84,6 +130,9 @@ jobs:
             --arg author "作成者: @${PR_AUTHOR}" \
             --arg action "状態: ${PR_ACTION}" \
             --arg draft "Draft: ${PR_DRAFT}" \
+            --arg priority "${priority}" \
+            --arg next_action "${next_action}" \
+            --arg body_excerpt "${body_excerpt}" \
             '{
               username: "Hermes GitHub Watch",
               content: $content,
@@ -95,7 +144,10 @@ jobs:
                   { name: "種類", value: "Pull Request", inline: true },
                   { name: "作成者", value: $author, inline: true },
                   { name: "状態", value: $action, inline: true },
-                  { name: "Draft", value: $draft, inline: true }
+                  { name: "Draft", value: $draft, inline: true },
+                  { name: "優先度", value: $priority, inline: true },
+                  { name: "次の一手", value: $next_action, inline: false },
+                  { name: "本文抜粋", value: $body_excerpt, inline: false }
                 ]
               }]
             }' > payload.json
