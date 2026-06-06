@@ -1,0 +1,66 @@
+# gha-repro-kit
+
+## Summary
+
+`gha-repro-kit` is a CLI and GitHub Action for small open source maintainers. It
+turns failed GitHub Actions logs into a compact failure packet so maintainers can
+understand CI-only failures without reading the full raw log.
+
+## Audience
+
+- Small OSS maintainers
+- Contributors debugging CI-only failures
+- Bots or agents that need structured CI failure context
+
+## Inputs
+
+- Local GitHub Actions failed log file via `--log-file`
+- Public GitHub Actions run via `owner/repo --run RUN_ID`
+- Specific failed job in a large workflow via `--job JOB_ID`
+
+## Outputs
+
+- `report.md`: failing job, step, likely command, environment hints, and context
+- `summary.md`: short text suitable for PR/issue discussion
+- `repro.sh`: local reproduction scaffold when a command can be inferred
+- `analysis.json`: structured parser output for automation
+
+## Current Capabilities
+
+- Parse local log files
+- Fetch failed run/job logs with the GitHub CLI
+- Support large workflows by analyzing a specific job ID
+- Extract runner, matrix, setup step, and language version hints
+- Classify setup-action failures, download/archive failures, and native
+  extension build failures
+- Preserve public real-world examples in `examples/`
+
+## Non-Goals
+
+- Does not replace CI systems, test runners, or code review bots
+- Does not require OpenAI API usage or any AI provider for the MVP
+- Does not execute generated reproduction commands automatically
+- Does not hide the raw log; it produces a compact handoff next to the raw
+  evidence
+
+## Important Files
+
+- `src/cli.js`: CLI entry point and artifact writing
+- `src/github.js`: GitHub CLI integration
+- `src/parser.js`: log parsing, environment inference, failure classification
+- `src/report.js`: `report.md`, `summary.md`, and `repro.sh` rendering
+- `examples/README.md`: public real-world evidence
+- `.github/workflows/ci.yml`: test workflow
+- `.github/workflows/notify-discord.yml`: maintainer notification workflow
+
+## Best Next Improvements
+
+- Improve multi-line `Run` step names
+- Extract working directory hints
+- Add package-manager-specific failure classes
+- Generate Dockerfile/devcontainer hints when CI setup is inferable
+- Compare failed runs against previous successful runs
+
+## Repository
+
+https://github.com/AZIT1125/gha-repro-kit

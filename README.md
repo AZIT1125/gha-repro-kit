@@ -1,7 +1,31 @@
 # gha-repro-kit
 
-`gha-repro-kit` helps small open source maintainers spend less time reading failed
-GitHub Actions logs.
+`gha-repro-kit` is a CLI and GitHub Action that turns failed GitHub Actions logs
+into a compact maintainer handoff.
+
+It is for small open source maintainers who need to understand CI-only failures
+without reading the full raw log.
+
+Input:
+
+- a local failed GitHub Actions log file, or
+- a public GitHub Actions run/job fetched through the GitHub CLI
+
+Output:
+
+- `report.md`: failing job, step, command, environment hints, and log context
+- `summary.md`: a short PR/issue-ready maintainer summary
+- `repro.sh`: a local reproduction scaffold when a command can be inferred
+- `analysis.json`: machine-readable failure data for bots and follow-up tools
+
+Non-goals:
+
+- It does not replace CI, test runners, or code review bots.
+- It does not require AI or API access for the MVP.
+- It does not execute generated reproduction commands automatically.
+
+Project status: early MVP, deterministic parser, public real-world examples
+included.
 
 It turns a failed run into:
 
