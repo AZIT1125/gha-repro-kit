@@ -34,6 +34,8 @@ The JSON response uses this top-level shape:
 }
 ```
 
+See `docs/analysis-json.md` for the `analysis` field guide.
+
 When files are written, `artifacts` contains absolute paths to:
 
 - `report.md`

@@ -3,41 +3,37 @@
 `gha-repro-kit` is a CLI and GitHub Action that turns failed GitHub Actions logs
 into a compact maintainer handoff.
 
-It is for small open source maintainers who need to understand CI-only failures
-without reading the full raw log.
+It is for small open source maintainers, contributors, and agents that need to
+understand CI-only failures without reading the full raw log.
 
-Input:
+It takes:
 
-- a local failed GitHub Actions log file, or
-- a public GitHub Actions run/job fetched through the GitHub CLI
+- a local failed GitHub Actions log file
+- a public GitHub Actions run ID
+- a specific failed job ID from a large workflow
 
-Output:
+It produces:
 
 - `report.md`: failing job, step, command, environment hints, and log context
 - `summary.md`: a short PR/issue-ready maintainer summary
 - `repro.sh`: a local reproduction scaffold when a command can be inferred
-- `analysis.json`: machine-readable failure data for bots and follow-up tools
+- `analysis.json`: machine-readable failure data for agents and follow-up tools
 - stdout JSON with `--json --no-files` for agent workflows
+
+Fast path for agents:
+
+```bash
+gha-repro-kit --log-file ./failed.log --json --no-files
+```
+
+Project status: early MVP, deterministic parser, public real-world examples
+included.
 
 Non-goals:
 
 - It does not replace CI, test runners, or code review bots.
 - It does not require AI or API access for the MVP.
 - It does not execute generated reproduction commands automatically.
-
-Project status: early MVP, deterministic parser, public real-world examples
-included.
-
-It turns a failed run into:
-
-- a concise `report.md` with the failing job, step, command, and surrounding log context
-- a runnable `repro.sh` scaffold for local reproduction
-- a short `summary.md` that can be pasted into a PR or issue
-- a machine-readable `analysis.json` for bots and follow-up automation
-- CI environment hints such as runner, matrix values, setup steps, and language versions
-- a short list of jobs and commands seen in the failed log
-- failure classification for setup-action failures, download/archive problems,
-  and native extension build failures
 
 The first version intentionally stays narrow: it focuses on failed GitHub Actions
 runs and produces artifacts maintainers can paste into a PR or issue.
@@ -141,6 +137,7 @@ AI-readable metadata:
 - [`agent-card.json`](agent-card.json): structured capability metadata for agents
 - [`docs/agent-integration.md`](docs/agent-integration.md): current agent
   contract and future protocol-readiness notes
+- [`docs/analysis-json.md`](docs/analysis-json.md): `analysis.json` field guide
 
 ## Try It On A Failed Run
 
@@ -249,6 +246,7 @@ Current examples include:
 ## Roadmap
 
 - Generate a Dockerfile or devcontainer when CI setup is inferable
+- Add explicit confidence fields to the JSON contract
 - Compare failed runs against previous successful runs
 - Comment `summary.md` on failed PR checks
 - Detect flaky failures by comparing repeated failed runs

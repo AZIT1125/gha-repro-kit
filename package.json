@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "description": "Turn failed GitHub Actions runs into concise reports and local reproduction scaffolds.",
   "type": "module",
+  "homepage": "https://github.com/AZIT1125/gha-repro-kit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AZIT1125/gha-repro-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AZIT1125/gha-repro-kit/issues"
+  },
   "bin": {
     "gha-repro-kit": "./bin/gha-repro-kit.js"
   },
@@ -29,7 +37,9 @@
     "ci",
     "oss",
     "maintainers",
-    "repro"
+    "repro",
+    "agents",
+    "llms"
   ],
   "license": "MIT",
   "engines": {

@@ -24,9 +24,23 @@
       "output": {
         "type": "json",
         "schemaVersion": 1,
-        "description": "Structured failure analysis with artifacts set to null."
+        "description": "Structured failure analysis with artifacts set to null.",
+        "example": {
+          "schemaVersion": 1,
+          "analysis": {
+            "failureClass": {
+              "id": "generic",
+              "localRepro": true
+            }
+          },
+          "artifacts": null
+        }
       },
-      "sideEffects": "none when --no-files is used"
+      "sideEffects": "none when --no-files is used",
+      "exitCodes": {
+        "0": "analysis completed",
+        "1": "invalid input, unsupported option, GitHub CLI failure, or unexpected runtime error"
+      }
     },
     {
       "id": "analyze-github-run",
@@ -81,6 +95,7 @@
   },
   "agentHints": {
     "preferredInvocation": "gha-repro-kit --log-file ./failed.log --json --no-files",
+    "analysisFieldGuide": "docs/analysis-json.md",
     "jsonOutput": {
       "schemaVersion": 1,
       "topLevelKeys": [
@@ -98,7 +113,8 @@
       "The task requires executing the repro command automatically.",
       "The CI system is not GitHub Actions.",
       "The failure must be fixed without reviewing the affected source code."
-    ]
+    ],
+    "confidenceGuidance": "Treat primaryFailure and failureClass as parser inferences. Use context, nearestCommand, environment, and raw log evidence before applying fixes."
   },
   "protocolReadiness": {
     "x402": {
