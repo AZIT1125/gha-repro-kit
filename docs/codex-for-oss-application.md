@@ -1,5 +1,18 @@
 # Codex for Open Source Application Notes
 
+Application URL: https://openai.com/form/codex-for-oss/
+
+Repository URL: https://github.com/AZIT1125/gha-repro-kit
+
+GitHub username: `AZIT1125`
+
+Suggested role: Primary maintainer
+
+Suggested interests:
+
+- API credits for my project
+- Codex Security, if available for early OSS security review workflows
+
 ## Why this repository qualifies
 
 `gha-repro-kit` helps small OSS maintainers turn failed GitHub Actions runs into
