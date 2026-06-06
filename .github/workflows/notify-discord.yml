@@ -1,0 +1,156 @@
+name: Discord notifications
+
+on:
+  issues:
+    types: [opened, reopened]
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  notify-issue:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_ACTION: ${{ github.event.action }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${DISCORD_WEBHOOK_URL}" ]; then
+            echo "DISCORD_WEBHOOK_URL is not configured; skipping notification."
+            exit 0
+          fi
+
+          jq -n \
+            --arg content "gha-repro-kit にIssueが来ました。" \
+            --arg title "#${ISSUE_NUMBER} ${ISSUE_TITLE}" \
+            --arg url "${ISSUE_URL}" \
+            --arg author "作成者: @${ISSUE_AUTHOR}" \
+            --arg action "状態: ${ISSUE_ACTION}" \
+            '{
+              username: "Hermes GitHub Watch",
+              content: $content,
+              embeds: [{
+                title: $title,
+                url: $url,
+                color: 5793266,
+                fields: [
+                  { name: "種類", value: "Issue", inline: true },
+                  { name: "作成者", value: $author, inline: true },
+                  { name: "状態", value: $action, inline: true }
+                ]
+              }]
+            }' > payload.json
+
+          curl --fail-with-body \
+            -H "Content-Type: application/json" \
+            -d @payload.json \
+            "${DISCORD_WEBHOOK_URL}"
+
+  notify-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_ACTION: ${{ github.event.action }}
+          PR_DRAFT: ${{ github.event.pull_request.draft }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${DISCORD_WEBHOOK_URL}" ]; then
+            echo "DISCORD_WEBHOOK_URL is not configured; skipping notification."
+            exit 0
+          fi
+
+          jq -n \
+            --arg content "gha-repro-kit にPull Requestが来ました。" \
+            --arg title "#${PR_NUMBER} ${PR_TITLE}" \
+            --arg url "${PR_URL}" \
+            --arg author "作成者: @${PR_AUTHOR}" \
+            --arg action "状態: ${PR_ACTION}" \
+            --arg draft "Draft: ${PR_DRAFT}" \
+            '{
+              username: "Hermes GitHub Watch",
+              content: $content,
+              embeds: [{
+                title: $title,
+                url: $url,
+                color: 3447003,
+                fields: [
+                  { name: "種類", value: "Pull Request", inline: true },
+                  { name: "作成者", value: $author, inline: true },
+                  { name: "状態", value: $action, inline: true },
+                  { name: "Draft", value: $draft, inline: true }
+                ]
+              }]
+            }' > payload.json
+
+          curl --fail-with-body \
+            -H "Content-Type: application/json" \
+            -d @payload.json \
+            "${DISCORD_WEBHOOK_URL}"
+
+  notify-ci-failure:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RUN_NAME: ${{ github.event.workflow_run.name }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          RUN_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          RUN_SHA: ${{ github.event.workflow_run.head_sha }}
+          RUN_ACTOR: ${{ github.event.workflow_run.actor.login }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${DISCORD_WEBHOOK_URL}" ]; then
+            echo "DISCORD_WEBHOOK_URL is not configured; skipping notification."
+            exit 0
+          fi
+
+          short_sha="${RUN_SHA:0:7}"
+
+          jq -n \
+            --arg content "gha-repro-kit のCIが失敗しました。確認が必要です。" \
+            --arg title "${RUN_NAME} failed" \
+            --arg url "${RUN_URL}" \
+            --arg branch "${RUN_BRANCH}" \
+            --arg sha "${short_sha}" \
+            --arg actor "@${RUN_ACTOR}" \
+            '{
+              username: "Hermes GitHub Watch",
+              content: $content,
+              embeds: [{
+                title: $title,
+                url: $url,
+                color: 15158332,
+                fields: [
+                  { name: "種類", value: "CI失敗", inline: true },
+                  { name: "Branch", value: $branch, inline: true },
+                  { name: "Commit", value: $sha, inline: true },
+                  { name: "実行者", value: $actor, inline: true }
+                ]
+              }]
+            }' > payload.json
+
+          curl --fail-with-body \
+            -H "Content-Type: application/json" \
+            -d @payload.json \
+            "${DISCORD_WEBHOOK_URL}"
