@@ -17,6 +17,7 @@ Output:
 - `summary.md`: a short PR/issue-ready maintainer summary
 - `repro.sh`: a local reproduction scaffold when a command can be inferred
 - `analysis.json`: machine-readable failure data for bots and follow-up tools
+- stdout JSON with `--json --no-files` for agent workflows
 
 Non-goals:
 
@@ -84,6 +85,12 @@ Analyze an existing failed log:
 gha-repro-kit --log-file ./failed.log --out ./repro
 ```
 
+Return machine-readable JSON without writing files:
+
+```bash
+gha-repro-kit --log-file ./failed.log --json --no-files
+```
+
 Analyze a GitHub Actions run with the GitHub CLI:
 
 ```bash
@@ -120,6 +127,13 @@ gh run view <run-id> --repo <owner/repo> --log-failed
 
 If that fails, authenticate with `gh auth login` or download the log and use
 `--log-file`.
+
+Agent-friendly options:
+
+- `--json`: print `{ schemaVersion, analysis, artifacts }` as JSON
+- `--format json`: same as `--json`
+- `--no-files`: skip artifact writes and return `artifacts: null`
+- `--quiet`: suppress human-readable status lines in text mode
 
 ## Try It On A Failed Run
 

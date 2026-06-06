@@ -24,12 +24,15 @@ understand CI-only failures without reading the full raw log.
 - `summary.md`: short text suitable for PR/issue discussion
 - `repro.sh`: local reproduction scaffold when a command can be inferred
 - `analysis.json`: structured parser output for automation
+- stdout JSON via `--json --no-files` for agents that should not write files
 
 ## Current Capabilities
 
 - Parse local log files
 - Fetch failed run/job logs with the GitHub CLI
 - Support large workflows by analyzing a specific job ID
+- Return JSON directly with `--json` / `--format json`
+- Skip artifact writes with `--no-files`
 - Extract runner, matrix, setup step, and language version hints
 - Classify setup-action failures, download/archive failures, and native
   extension build failures
@@ -42,6 +45,27 @@ understand CI-only failures without reading the full raw log.
 - Does not execute generated reproduction commands automatically
 - Does not hide the raw log; it produces a compact handoff next to the raw
   evidence
+
+## Agent Usage
+
+Use this form when an agent needs structured output without creating files:
+
+```bash
+gha-repro-kit --log-file ./failed.log --json --no-files
+```
+
+The JSON shape is:
+
+```json
+{
+  "schemaVersion": 1,
+  "analysis": {},
+  "artifacts": null
+}
+```
+
+When artifacts are desired, omit `--no-files`; `artifacts` contains absolute
+paths to `report.md`, `summary.md`, `repro.sh`, and `analysis.json`.
 
 ## Important Files
 
