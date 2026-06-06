@@ -67,6 +67,14 @@ The JSON shape is:
 When artifacts are desired, omit `--no-files`; `artifacts` contains absolute
 paths to `report.md`, `summary.md`, `repro.sh`, and `analysis.json`.
 
+## Agent Metadata
+
+- `agent-card.json`: structured capability metadata for automation
+- `docs/agent-integration.md`: agent contract and protocol-readiness notes
+
+The project is preparing for agent discovery and hosted-service compatibility,
+but x402, ERC-8004, ERC-8126, and ERC-8183 are not implemented yet.
+
 ## Important Files
 
 - `src/cli.js`: CLI entry point and artifact writing
@@ -74,6 +82,8 @@ paths to `report.md`, `summary.md`, `repro.sh`, and `analysis.json`.
 - `src/parser.js`: log parsing, environment inference, failure classification
 - `src/report.js`: `report.md`, `summary.md`, and `repro.sh` rendering
 - `examples/README.md`: public real-world evidence
+- `agent-card.json`: machine-readable capability and safety metadata
+- `docs/agent-integration.md`: current agent integration plan
 - `.github/workflows/ci.yml`: test workflow
 - `.github/workflows/notify-discord.yml`: maintainer notification workflow
 

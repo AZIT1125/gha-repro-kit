@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "0.1",
+  "name": "gha-repro-kit",
+  "description": "Turn failed GitHub Actions logs into concise maintainer handoff packets and structured JSON for agents.",
+  "repository": "https://github.com/AZIT1125/gha-repro-kit",
+  "homepage": "https://github.com/AZIT1125/gha-repro-kit",
+  "license": "MIT",
+  "status": "early-mvp",
+  "audience": [
+    "small-oss-maintainers",
+    "contributors-debugging-ci",
+    "automation-agents"
+  ],
+  "capabilities": [
+    {
+      "id": "analyze-local-log",
+      "name": "Analyze a local GitHub Actions log",
+      "kind": "cli",
+      "input": {
+        "type": "file",
+        "description": "A failed GitHub Actions log file."
+      },
+      "command": "gha-repro-kit --log-file ./failed.log --json --no-files",
+      "output": {
+        "type": "json",
+        "schemaVersion": 1,
+        "description": "Structured failure analysis with artifacts set to null."
+      },
+      "sideEffects": "none when --no-files is used"
+    },
+    {
+      "id": "analyze-github-run",
+      "name": "Analyze a failed GitHub Actions run",
+      "kind": "cli",
+      "input": {
+        "type": "github-actions-run",
+        "description": "Public owner/repo plus run ID, fetched through the GitHub CLI."
+      },
+      "command": "gha-repro-kit owner/repo --run RUN_ID --json",
+      "output": {
+        "type": "json-and-files",
+        "description": "Structured analysis plus report.md, summary.md, repro.sh, and analysis.json."
+      },
+      "requirements": [
+        "gh CLI",
+        "GitHub Actions read access for the target run"
+      ]
+    },
+    {
+      "id": "analyze-github-job",
+      "name": "Analyze one failed job from a large workflow",
+      "kind": "cli",
+      "input": {
+        "type": "github-actions-job",
+        "description": "Public owner/repo plus failed job database ID."
+      },
+      "command": "gha-repro-kit --repo owner/repo --job JOB_ID --json",
+      "output": {
+        "type": "json-and-files",
+        "description": "Structured analysis scoped to one failed job."
+      },
+      "requirements": [
+        "gh CLI",
+        "GitHub Actions read access for the target job"
+      ]
+    }
+  ],
+  "outputs": [
+    "report.md",
+    "summary.md",
+    "repro.sh",
+    "analysis.json",
+    "stdout-json"
+  ],
+  "safety": {
+    "executesGeneratedCommands": false,
+    "requiresOpenAIApi": false,
+    "requiresPayment": false,
+    "secretsHandling": "Does not require or display API keys for the MVP.",
+    "networkAccess": "Only GitHub CLI fetching is used when analyzing a GitHub run or job."
+  },
+  "agentHints": {
+    "preferredInvocation": "gha-repro-kit --log-file ./failed.log --json --no-files",
+    "jsonOutput": {
+      "schemaVersion": 1,
+      "topLevelKeys": [
+        "schemaVersion",
+        "analysis",
+        "artifacts"
+      ]
+    },
+    "whenToUse": [
+      "A GitHub Actions job failed and the raw log is too long.",
+      "A maintainer needs a short PR or issue reply.",
+      "An automation needs failure class, likely command, runner, matrix, or setup-step hints."
+    ],
+    "whenNotToUse": [
+      "The task requires executing the repro command automatically.",
+      "The CI system is not GitHub Actions.",
+      "The failure must be fixed without reviewing the affected source code."
+    ]
+  },
+  "protocolReadiness": {
+    "x402": {
+      "status": "not-implemented",
+      "plannedUse": "Optional pay-per-request HTTP API for hosted analysis, if a hosted service is added."
+    },
+    "ERC-8004": {
+      "status": "not-implemented",
+      "plannedUse": "Agent identity, discovery, and reputation metadata for a hosted CI failure analysis agent."
+    },
+    "ERC-8126": {
+      "status": "not-implemented",
+      "plannedUse": "Endpoint or agent verification metadata if external agent calls are exposed."
+    },
+    "ERC-8183": {
+      "status": "not-implemented",
+      "plannedUse": "Agentic job or escrow flows for requested CI triage work, if that ecosystem stabilizes."
+    }
+  },
+  "contacts": {
+    "issues": "https://github.com/AZIT1125/gha-repro-kit/issues"
+  }
+}

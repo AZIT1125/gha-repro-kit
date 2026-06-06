@@ -135,6 +135,13 @@ Agent-friendly options:
 - `--no-files`: skip artifact writes and return `artifacts: null`
 - `--quiet`: suppress human-readable status lines in text mode
 
+AI-readable metadata:
+
+- [`llms.txt`](llms.txt): concise project context for language models
+- [`agent-card.json`](agent-card.json): structured capability metadata for agents
+- [`docs/agent-integration.md`](docs/agent-integration.md): current agent
+  contract and future protocol-readiness notes
+
 ## Try It On A Failed Run
 
 From a repository with a failed GitHub Actions run:
@@ -245,6 +252,9 @@ Current examples include:
 - Compare failed runs against previous successful runs
 - Comment `summary.md` on failed PR checks
 - Detect flaky failures by comparing repeated failed runs
+- Add a hosted analysis API only after the CLI/JSON contract has real usage
+- Explore x402, ERC-8004, ERC-8126, and ERC-8183 integrations after the hosted
+  agent surface is justified
 - Optional OpenAI-powered log summarization and contributor-facing replies
 
 ## Maintainer impact

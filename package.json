@@ -8,6 +8,7 @@
   },
   "files": [
     "action.yml",
+    "agent-card.json",
     "bin/",
     "docs/",
     "examples/",
