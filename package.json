@@ -12,7 +12,7 @@
     "url": "https://github.com/AZIT1125/gha-repro-kit/issues"
   },
   "bin": {
-    "gha-repro-kit": "./bin/gha-repro-kit.js"
+    "gha-repro-kit": "bin/gha-repro-kit.js"
   },
   "files": [
     "action.yml",
