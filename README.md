@@ -1,5 +1,9 @@
 # gha-repro-kit
 
+[![npm version](https://img.shields.io/npm/v/gha-repro-kit.svg)](https://www.npmjs.com/package/gha-repro-kit)
+[![CI](https://github.com/AZIT1125/gha-repro-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/AZIT1125/gha-repro-kit/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 `gha-repro-kit` is a CLI and GitHub Action that turns failed GitHub Actions logs
 into a compact maintainer handoff.
 
@@ -23,6 +27,7 @@ It produces:
 Fast path for agents:
 
 ```bash
+npm install -g gha-repro-kit
 gha-repro-kit --log-file ./failed.log --json --no-files
 ```
 
