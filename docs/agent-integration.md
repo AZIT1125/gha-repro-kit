@@ -18,6 +18,8 @@ The repository exposes two AI-readable files:
 
 - `llms.txt`: concise project context for language models
 - `agent-card.json`: structured service/capability metadata for automation
+- `.well-known/agent-registration.json`: ERC-8004 discovery registration
+  candidate
 
 `agent-card.json` describes supported invocations, outputs, side effects, safety
 constraints, and future protocol readiness.
@@ -45,16 +47,16 @@ When files are written, `artifacts` contains absolute paths to:
 
 ## Protocol Readiness
 
-The project is not implementing x402, ERC-8004, ERC-8126, or ERC-8183 yet. The
-Phase 2 goal is to make the tool easy to discover and call before adding hosted
-payment, identity, verification, or escrow layers.
+The project is not implementing x402, ERC-8126, or ERC-8183 yet. For ERC-8004,
+the repository includes discovery metadata only; it has not been registered
+on-chain.
 
 Future hosted-agent work can build on this order:
 
 1. Keep the CLI and JSON output stable.
-2. Add an HTTP wrapper around the same analysis contract.
-3. Add optional x402 payment for hosted analysis requests.
-4. Publish agent identity/discovery metadata for ERC-8004 style ecosystems.
+2. Keep ERC-8004 discovery metadata accurate.
+3. Add an HTTP wrapper around the same analysis contract if demand appears.
+4. Add optional x402 payment for hosted analysis requests.
 5. Add endpoint verification metadata for ERC-8126 style ecosystems.
 6. Consider ERC-8183 style job or escrow flows only after real demand appears.
 

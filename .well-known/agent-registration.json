@@ -1,0 +1,47 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "gha-repro-kit",
+  "description": "A deterministic CI failure analysis tool that turns failed GitHub Actions logs into maintainer reports, local reproduction scaffolds, and structured JSON for automation agents.",
+  "image": "https://github.com/AZIT1125.png",
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://github.com/AZIT1125/gha-repro-kit"
+    },
+    {
+      "name": "npm",
+      "endpoint": "https://www.npmjs.com/package/gha-repro-kit",
+      "version": "0.1.0"
+    },
+    {
+      "name": "agent-card",
+      "endpoint": "https://raw.githubusercontent.com/AZIT1125/gha-repro-kit/main/agent-card.json",
+      "version": "0.1"
+    },
+    {
+      "name": "cli",
+      "endpoint": "npm install -g gha-repro-kit && gha-repro-kit --log-file ./failed.log --json --no-files",
+      "version": "0.1.0"
+    }
+  ],
+  "x402Support": false,
+  "active": true,
+  "registrations": [],
+  "supportedTrust": [
+    "discovery"
+  ],
+  "keywords": [
+    "github-actions",
+    "ci",
+    "oss",
+    "maintainers",
+    "repro",
+    "agents",
+    "llms"
+  ],
+  "notes": {
+    "registrationStatus": "not-registered",
+    "registrationIntent": "ERC-8004 discovery metadata candidate only. No on-chain agentId or agentRegistry has been assigned yet.",
+    "x402": "Not implemented. The current package is a free CLI and GitHub Action."
+  }
+}

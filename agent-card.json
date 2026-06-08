@@ -122,8 +122,10 @@
       "plannedUse": "Optional pay-per-request HTTP API for hosted analysis, if a hosted service is added."
     },
     "ERC-8004": {
-      "status": "not-implemented",
-      "plannedUse": "Agent identity, discovery, and reputation metadata for a hosted CI failure analysis agent."
+      "status": "discovery-metadata-prepared",
+      "registrationFile": ".well-known/agent-registration.json",
+      "registrationStatus": "not-registered",
+      "plannedUse": "Agent identity and discovery metadata for a CI failure analysis tool. No on-chain agentId or agentRegistry has been assigned yet."
     },
     "ERC-8126": {
       "status": "not-implemented",

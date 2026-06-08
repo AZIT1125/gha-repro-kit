@@ -143,6 +143,10 @@ AI-readable metadata:
 - [`docs/agent-integration.md`](docs/agent-integration.md): current agent
   contract and future protocol-readiness notes
 - [`docs/analysis-json.md`](docs/analysis-json.md): `analysis.json` field guide
+- [`.well-known/agent-registration.json`](.well-known/agent-registration.json):
+  ERC-8004 discovery registration candidate
+- [`docs/erc-8004-discovery.md`](docs/erc-8004-discovery.md): ERC-8004
+  discovery preparation notes
 
 ## Try It On A Failed Run
 

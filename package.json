@@ -17,6 +17,7 @@
   "files": [
     "action.yml",
     "agent-card.json",
+    ".well-known/",
     "bin/",
     "docs/",
     "examples/",

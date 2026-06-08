@@ -72,9 +72,12 @@ paths to `report.md`, `summary.md`, `repro.sh`, and `analysis.json`.
 - `agent-card.json`: structured capability metadata for automation
 - `docs/agent-integration.md`: agent contract and protocol-readiness notes
 - `docs/analysis-json.md`: `analysis.json` field guide
+- `.well-known/agent-registration.json`: ERC-8004 discovery registration
+  candidate
 
-The project is preparing for agent discovery and hosted-service compatibility,
-but x402, ERC-8004, ERC-8126, and ERC-8183 are not implemented yet.
+The project is preparing for agent discovery and hosted-service compatibility.
+ERC-8004 discovery metadata is present, but no on-chain registration has been
+made yet. x402, ERC-8126, and ERC-8183 are not implemented.
 
 ## Important Files
 
@@ -86,6 +89,8 @@ but x402, ERC-8004, ERC-8126, and ERC-8183 are not implemented yet.
 - `agent-card.json`: machine-readable capability and safety metadata
 - `docs/agent-integration.md`: current agent integration plan
 - `docs/analysis-json.md`: structured output contract notes
+- `docs/erc-8004-discovery.md`: ERC-8004 discovery preparation notes
+- `.well-known/agent-registration.json`: ERC-8004 registration candidate
 - `.github/workflows/ci.yml`: test workflow
 - `.github/workflows/notify-discord.yml`: maintainer notification workflow
 
