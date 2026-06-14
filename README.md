@@ -148,6 +148,12 @@ AI-readable metadata:
 - [`docs/erc-8004-discovery.md`](docs/erc-8004-discovery.md): ERC-8004
   discovery preparation notes
 
+Open agent contribution task:
+
+- Find one public failed GitHub Actions run and add it as a real-world example.
+  The exact goal, commands, outputs, and acceptance criteria are in
+  [`docs/evidence-plan.md`](docs/evidence-plan.md) and `agent-card.json`.
+
 ## Try It On A Failed Run
 
 From a repository with a failed GitHub Actions run:
@@ -244,6 +250,8 @@ Current examples include:
 
 - [`openai/openai-node`](examples/openai-openai-node-27024660268): pnpm
   dependency metadata failure
+- [`vercel/next.js`](examples/vercel-next-js-27462426861-81178587791): Docker
+  checkout ownership failure in a large workflow, analyzed with `--job`
 - [`BurntSushi/ripgrep`](examples/BurntSushi-ripgrep-26858976307): downloaded
   archive was not gzip
 - [`psf/black`](examples/psf-black-26904107152): unavailable Python prerelease

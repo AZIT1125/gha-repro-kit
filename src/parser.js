@@ -170,6 +170,10 @@ function isUsefulCommand(command) {
     return false;
   }
 
+  if (/^(?:with|to)\s+/i.test(command)) {
+    return false;
+  }
+
   if (/^(?:if|then|else|elif|fi|for|do|done|while|case|esac)\b/.test(command)) {
     return false;
   }
@@ -272,6 +276,22 @@ function classifyFailure({ entries, failures, commands, primaryFailure }) {
     };
   }
 
+  if (isGitSafeDirectoryFailure(cleanedRelevantText)) {
+    return {
+      id: "git-safe-directory",
+      label: "Git safe.directory ownership failure",
+      localRepro: true,
+      summary:
+        "Git rejected a mounted checkout because the repository ownership differs from the user inside the runner or container.",
+      recommendations: [
+        "Re-run the failing container command with the same mounted checkout path.",
+        "Confirm whether the container user differs from the checkout owner.",
+        "If this is expected in CI, add the mounted checkout path with git config --global --add safe.directory <path> before commands that inspect Git state.",
+      ],
+      relatedCommands: findRelatedCommands(commands, primaryFailure, /(?:docker|podman|git)\b/i),
+    };
+  }
+
   if (isArchiveDownloadFailure(cleanedRelevantText, primaryFailure)) {
     return {
       id: "download-archive",
@@ -315,6 +335,10 @@ function isActionStepFailure(text, entries, primaryFailure) {
       Math.abs(entries.indexOf(entry) + 1 - primaryFailure.lineNumber) <= 40
     );
   });
+}
+
+function isGitSafeDirectoryFailure(text) {
+  return /\bfatal:\s+detected dubious ownership in repository\b/i.test(text);
 }
 
 function isArchiveDownloadFailure(text, primaryFailure) {

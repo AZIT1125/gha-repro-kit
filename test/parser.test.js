@@ -103,4 +103,19 @@ describe("parseFailureLog", () => {
     assert.equal(analysis.failureClass.id, "native-extension");
     assert.equal(analysis.failureClass.localRepro, true);
   });
+
+  it("classifies Git safe.directory failures and ignores runner hint text", () => {
+    const log = [
+      "examples\tUNKNOWN STEP\t2026-06-13T09:07:27Z\t##[group]Run docker run --rm -v $(pwd):/work image /bin/bash -c \"cd /work && pnpm test\"",
+      "examples\tUNKNOWN STEP\t2026-06-13T09:08:04Z\tWARNING failed to get git status: Git error: fatal: detected dubious ownership in repository at '/work'",
+      "examples\tUNKNOWN STEP\t2026-06-13T09:08:04Z\tgit config --global --add safe.directory /work",
+      "examples\tUNKNOWN STEP\t2026-06-13T09:08:16Z\tRun with `--passWithNoTests` to exit with code 0",
+      "examples\tUNKNOWN STEP\t2026-06-13T09:08:17Z\tError: failed with code: 1",
+    ].join("\n");
+    const analysis = parseFailureLog(log);
+
+    assert.equal(analysis.failureClass.id, "git-safe-directory");
+    assert.equal(analysis.primaryFailure.nearestCommand.command, 'docker run --rm -v $(pwd):/work image /bin/bash -c "cd /work && pnpm test"');
+    assert.equal(analysis.commands.some((command) => command.command.startsWith("with ")), false);
+  });
 });
