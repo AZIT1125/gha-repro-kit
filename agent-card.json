@@ -86,6 +86,52 @@
     "analysis.json",
     "stdout-json"
   ],
+  "openContributionTasks": [
+    {
+      "id": "collect-public-failed-actions-run",
+      "title": "Find one public failed GitHub Actions run and add it as an example",
+      "status": "open",
+      "difficulty": "good-first-agent-task",
+      "issue": "https://github.com/AZIT1125/gha-repro-kit/issues/1",
+      "goal": "Increase real-world evidence by adding one public failed GitHub Actions run that exercises gha-repro-kit on a useful failure mode.",
+      "preferredFailureTypes": [
+        "actions/setup-* failure",
+        "package manager failure",
+        "large workflow that requires --job",
+        "runner, matrix, or language version mismatch",
+        "Docker or service-container CI-only failure"
+      ],
+      "inputs": [
+        "public owner/repo",
+        "failed GitHub Actions run ID",
+        "failed job database ID when the workflow is large",
+        "short stack and failure-class description"
+      ],
+      "expectedArtifacts": [
+        "examples/owner-repo-RUN_ID/summary.md",
+        "examples/owner-repo-RUN_ID/report.md",
+        "examples/owner-repo-RUN_ID/repro.sh",
+        "examples/owner-repo-RUN_ID/analysis.json",
+        "examples/owner-repo-RUN_ID/notes.md",
+        "an examples/README.md table entry"
+      ],
+      "commands": [
+        "gh run list --repo owner/repo --status failure --limit 10",
+        "gh run view RUN_ID --repo owner/repo --json jobs --jq '.jobs[] | select(.conclusion == \"failure\") | [.databaseId, .name] | @tsv'",
+        "gha-repro-kit owner/repo --run RUN_ID --job JOB_ID --out examples/owner-repo-RUN_ID-JOB_ID"
+      ],
+      "acceptanceCriteria": [
+        "The run URL is public.",
+        "No secrets, tokens, private URLs, or personal data are included.",
+        "notes.md says what gha-repro-kit got right, what it missed, and one next parser improvement.",
+        "npm test passes."
+      ],
+      "referenceDocs": [
+        "docs/evidence-plan.md",
+        "examples/README.md"
+      ]
+    }
+  ],
   "safety": {
     "executesGeneratedCommands": false,
     "requiresOpenAIApi": false,
